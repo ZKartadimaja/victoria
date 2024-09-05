@@ -33,6 +33,12 @@ public class Main {
         System.out.println("Luas Lingkaran dengan r = 10 adalah "+L1);
         System.out.println("Luas Lingkaran dengan r = 15 adalah "+L2);
 
+        //Bilangan Ganjil Genap
+        int result = (60 % 2);
+        System.out.println("60 % 2 = "+result);
+        System.out.println("Genap = "+ true);
+
+
 
 
 
