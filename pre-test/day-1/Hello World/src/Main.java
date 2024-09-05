@@ -63,19 +63,33 @@ public class Main {
 //            }
 //        }
         //int day = 1;
-        Integer [] day = new Integer[]{1,2,3,5};
-        String dayName;
-        for(Integer num : day){
-            switch (num) {
-                case 1: dayName = "Sunday"; break;
-                case 2: dayName = "Monday"; break;
-                case 3: dayName = "Tuesday"; break;
-                default: dayName = "Invalid day"; break;
+//        Integer [] day = new Integer[]{1,2,3,5};
+//        String dayName;
+//        for(Integer num : day){
+//            switch (num) {
+//                case 1: dayName = "Sunday"; break;
+//                case 2: dayName = "Monday"; break;
+//                case 3: dayName = "Tuesday"; break;
+//                default: dayName = "Invalid day"; break;
+//            }
+//            System.out.println(dayName);
+//        }
+        Integer [] myNumber = new Integer[]{10,75,76,47};
+        String OEName;
+        for(Integer num : myNumber) {
+            switch (num % 2) {
+                case 0:
+                    OEName = "Odd";
+                    break;
+                case 1:
+                    OEName = "Even";
+                    break;
+                default:
+                    OEName = "NaN";
+                    break;
             }
-            System.out.println(dayName);
+            System.out.println("Number = "+num);
+            System.out.println(OEName);
         }
-
-
-
     }
 }
