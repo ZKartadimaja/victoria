@@ -124,7 +124,7 @@ public class Main {
         int myNumber = 8;
         int result;
         result = 1;
-        for (int i = 1; i <= myNumber; i++) {
+        for (int i = myNumber; i > 0; i--) {
             result = result * i;
         }
         System.out.println(result);
