@@ -74,22 +74,29 @@ public class Main {
 //            }
 //            System.out.println(dayName);
 //        }
-        Integer [] myNumber = new Integer[]{10,75,76,47};
-        String OEName;
-        for(Integer num : myNumber) {
-            switch (num % 2) {
-                case 0:
-                    OEName = "Odd";
-                    break;
-                case 1:
-                    OEName = "Even";
-                    break;
-                default:
-                    OEName = "NaN";
-                    break;
+//        Integer [] myNumber = new Integer[]{10,75,76,47};
+//        String OEName;
+//        for(Integer num : myNumber) {
+//            switch (num % 2) {
+//                case 0:
+//                    OEName = "Genap";
+//                    break;
+//                case 1:
+//                    OEName = "Ganjil";
+//                    break;
+//                default:
+//                    OEName = "NaN";
+//                    break;
+//            }
+//            System.out.println("Number = "+num);
+//            System.out.println(OEName);
+//        }
+        for (int i = 1; i <= 50; i++) {
+            if (i % 2 == 1){
+                System.out.println(i);
+            } else if (i % 2 == 0) {
+                System.out.println("Even");
             }
-            System.out.println("Number = "+num);
-            System.out.println(OEName);
         }
     }
 }
