@@ -8,5 +8,6 @@ public class employee {
     void sayHello() {
         System.out.println("Hello World");
     }
+    void identity{}
 
 }
