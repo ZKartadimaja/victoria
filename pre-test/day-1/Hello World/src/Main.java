@@ -45,23 +45,36 @@ public class Main {
 //        System.out.println(myNumber == Number);
 
         //Odd Even Upgrade
-        int myNumber = 47;
-        System.out.println("Nomor anda adalah "+myNumber);
-        if (myNumber > 50) {
-            System.out.println("Angka lebih besar dari 50");
-            if (myNumber % 2 == 0) {
-                System.out.println(("Angka anda merupakan angka genap"));
-            } else if (myNumber % 2 == 1) {
-                System.out.println("Angka anda merupakan ganjil");
+//        int myNumber = 47;
+//        System.out.println("Nomor anda adalah "+myNumber);
+//        if (myNumber > 50) {
+//            System.out.println("Angka lebih besar dari 50");
+//            if (myNumber % 2 == 0) {
+//                System.out.println(("Angka anda merupakan angka genap"));
+//            } else if (myNumber % 2 == 1) {
+//                System.out.println("Angka anda merupakan ganjil");
+//            }
+//        } else if (myNumber < 50) {
+//            System.out.println("Angka lebih kecil dari 50");
+//            if (myNumber % 2 == 0) {
+//                System.out.println(("Angka anda merupakan angka genap"));
+//            } else if (myNumber % 2 == 1) {
+//                System.out.println("Angka anda merupakan ganjil");
+//            }
+//        }
+        //int day = 1;
+        Integer [] day = new Integer[]{1,2,3,5};
+        String dayName;
+        for(Integer num : day){
+            switch (num) {
+                case 1: dayName = "Sunday"; break;
+                case 2: dayName = "Monday"; break;
+                case 3: dayName = "Tuesday"; break;
+                default: dayName = "Invalid day"; break;
             }
-        } else if (myNumber < 50) {
-            System.out.println("Angka lebih kecil dari 50");
-            if (myNumber % 2 == 0) {
-                System.out.println(("Angka anda merupakan angka genap"));
-            } else if (myNumber % 2 == 1) {
-                System.out.println("Angka anda merupakan ganjil");
-            }
+            System.out.println(dayName);
         }
+
 
 
     }
