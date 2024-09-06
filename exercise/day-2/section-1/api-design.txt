@@ -1,0 +1,51 @@
+- Create Asset
+URI: /asset
+Method: POST
+request:
+{
+    "name": "James Bond"
+    "type": "House"
+    "amount": 7000000000
+}
+response:
+{
+    "status code" 201,
+}
+
+- Read Asset (get asset by id)
+URI: /asset/1
+Method: GET
+response:
+{
+    "id": 1,
+    "name" : "James Bond",
+    "type" : "House",
+    "amount" : 7000000000
+}
+
+- Update Asset
+URI: /asset/1
+Method: PUT
+request:
+{
+    "id": 1,
+    "name": "Taufik",
+    "type": "Car",
+    "amount": "25000000"
+}
+response:
+{
+    "status code" 200,
+}
+
+- Delete Asset
+URI: /asset/1
+Method: DELETE
+request:
+{
+    "id" : 1
+}
+response:
+{
+    "status code" 200
+}
