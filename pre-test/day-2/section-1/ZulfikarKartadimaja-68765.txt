@@ -1,0 +1,32 @@
+1. B
+2. B
+3. B
+4. C
+5. C
+6. B
+7. B
+8. C
+9. A
+10. B
+11. False
+12. False
+13. True
+14. False
+15. True
+
+// Essay
+1. Principles = Stateless, Client-Server Architecture, Uniform Interface.
+2. Get digunakan untuk mengambil data, Post untuk membuat data baru, Put untuk mengupdate data yang sudah ada, Delete untuk menghapus data
+3. Dengan mengkombinasikan beberapa fungsi
+4. Digunakan untuk memetakan permintaan web ke kelas handler dan/atau metode handler tertentu.
+5. Untuk menginfokan kendala yang terjadi, contohnya error, 404, 500. 404 untuk page yang tidak tersedia
+6. Dengan cara menentukan aturan validasi dalam validator permintaan, tambahkan validator ke peta validator permintaan API, dan tetapkan validator ke masing-masing metode API.
+7. Spring IoC (Inversion of Control) Container adalah inti dari Spring Framework. Ini membuat objek, mengonfigurasi dan merakit dependensinya, mengelola seluruh siklus hidupnya. Kontainer menggunakan Injeksi Dependensi (DI) untuk mengelola komponen yang membentuk aplikasi.
+8. @RequestBody = Objek yang dideserialisasi diteruskan sebagai parameter metode., @ResponseBody = Objek berseri dikembalikan dari metode.
+9. Spring Boot menggunakan Jackson untuk mengubah JSON menjadi objek java maupun sebaliknya secara otomatis
+10. Spring Boot membantu menangani kesalahan dan pengecualian yang ada di API, menghadirkan aplikasi perusahaan yang kuat.
+11. Allow or restrict resources on a web page to be requested from another domain
+12. Spring Security bekerja dengan membuat sebuah autentifikasi (verifikasi identitas) dan autorisasi (membatasi akses terhadap file/item tertentu)
+13. Setiap request harus memiliki semua informasi penting untuk server agar dapat diproses.
+14. Dimulai dengan menjalankan aplikasi Spring Boot, membuat request dalam Postman, melakukan test terhadap setiap endpoint (GET, POST, PUT, DELETE), verifikasi respon dari JSON.
+15. Integration Test = Uji seluruh alur aplikasi, dari pengontrol ke database dan Unit Test = hanya bagian tertentu
