@@ -1,11 +1,13 @@
 package com.example.first_application;
 
-import com.example.first_application.response.GetAssetResponse;
+import com.example.first_application.request.CreateUserRequest;
+import com.example.first_application.response.CreateUserResponse;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -90,39 +92,64 @@ public class FirstApplication {
 //	}
 //	}
 
-	@GetMapping("/assets")
-	public ArrayList<GetAssetResponse> getAssetByPageSize(
-			@RequestParam (name = "page", defaultValue = "1") int page,
-			@RequestParam (name = "size", defaultValue = "1") int size
-//			@PathVariable Long id
-	) {
-		ArrayList<GetAssetResponse> list = new ArrayList<>();
-		ArrayList<GetAssetResponse> asset;
-		asset = new ArrayList<>();
-		asset.add(GetAssetResponse.builder().id(1L).fullname("James Bond").type("House").amount(700000000).build());
-		asset.add(GetAssetResponse.builder().id(2L).fullname("Taufik Adi").type("Motorcycle").amount(25000000).build());
-		asset.add(GetAssetResponse.builder().id(3L).fullname("Kevin").type("Apartment").amount(250000000).build());
-		asset.add(GetAssetResponse.builder().id(4L).fullname("Joko").type("Car").amount(300000000).build());
-		asset.add(GetAssetResponse.builder().id(5L).fullname("Dodo").type("House").amount(700000000).build());
-		asset.add(GetAssetResponse.builder().id(6L).fullname("James Bond").type("House").amount(700000000).build());
-		asset.add(GetAssetResponse.builder().id(7L).fullname("Taufik Adi").type("Motorcycle").amount(25000000).build());
-		asset.add(GetAssetResponse.builder().id(8L).fullname("Kevin").type("Apartment").amount(250000000).build());
-		asset.add(GetAssetResponse.builder().id(9L).fullname("Joko").type("Car").amount(300000000).build());
-		asset.add(GetAssetResponse.builder().id(10L).fullname("Dodo").type("House").amount(700000000).build());
-
-        ArrayList<GetAssetResponse> tampung = new ArrayList<>();
-        int start = (size * page - size);
-        int j = start;
-		while (j < start + size && j < asset.size()){
-			tampung.add(asset.get(j));
-			j++;
-		}
-		return tampung;
-	}
-}
-
-
-//	@GetMapping("/assets/{id}")
-//	public ResponseEntity<Long> getUserById(Long id){
-//		return new ResponseEntity<>(id, HttpStatus.OK);
+//	@GetMapping("/assets")
+//	public ArrayList<GetAssetResponse> getAssetByPageSize(
+//			@RequestParam (name = "page", defaultValue = "1") int page,
+//			@RequestParam (name = "size", defaultValue = "1") int size
+////			@PathVariable Long id
+//	) {
+//		ArrayList<GetAssetResponse> list = new ArrayList<>();
+//		ArrayList<GetAssetResponse> asset;
+//		asset = new ArrayList<>();
+//		asset.add(GetAssetResponse.builder().id(1L).fullname("James Bond").type("House").amount(700000000).build());
+//		asset.add(GetAssetResponse.builder().id(2L).fullname("Taufik Adi").type("Motorcycle").amount(25000000).build());
+//		asset.add(GetAssetResponse.builder().id(3L).fullname("Kevin").type("Apartment").amount(250000000).build());
+//		asset.add(GetAssetResponse.builder().id(4L).fullname("Joko").type("Car").amount(300000000).build());
+//		asset.add(GetAssetResponse.builder().id(5L).fullname("Dodo").type("House").amount(700000000).build());
+//		asset.add(GetAssetResponse.builder().id(6L).fullname("James Bond").type("House").amount(700000000).build());
+//		asset.add(GetAssetResponse.builder().id(7L).fullname("Taufik Adi").type("Motorcycle").amount(25000000).build());
+//		asset.add(GetAssetResponse.builder().id(8L).fullname("Kevin").type("Apartment").amount(250000000).build());
+//		asset.add(GetAssetResponse.builder().id(9L).fullname("Joko").type("Car").amount(300000000).build());
+//		asset.add(GetAssetResponse.builder().id(10L).fullname("Dodo").type("House").amount(700000000).build());
+//
+//        ArrayList<GetAssetResponse> tampung = new ArrayList<>();
+//        int start = (size * page - size);
+//        int j = start;
+//		while (j < start + size && j < asset.size()){
+//			tampung.add(asset.get(j));
+//			j++;
+//		}
+//		return tampung;
 //	}
+//	@PostMapping("/users")
+//	public ResponseEntity<List<CreateUserRequest>> createUser(
+//		@RequestBody CreateUserRequest request) {
+//		List<CreateUserRequest> createUserRequestList = new ArrayList<>();
+//
+//		createUserRequestList.add(CreateUserRequest.builder().id(1L).fullname("James Bond").type("House").amount(700000000).build());
+//		createUserRequestList.add(CreateUserRequest.builder().id(2L).fullname("Jane Doe").type("Car").amount(250000000).build());
+//
+//		createUserRequestList.add(
+//				CreateUserRequest.builder().id(request.getId()).fullname(request.getFullname()).type(request.getType()).amount(request.getAmount()).build()
+//		);
+//		// return Response
+//		return new ResponseEntity<>(createUserRequestList, HttpStatus.OK);
+//		}
+
+	@PostMapping("/employee")
+	public ResponseEntity<List<CreateUserResponse>> createEmployee(
+		@RequestBody CreateUserRequest request_e) {
+		List<CreateUserResponse> createEmployeeResponseList = new ArrayList<>();
+
+		createEmployeeResponseList.add(CreateUserResponse.builder().id(1L).fullname("James").age(24).address("Tangerang Selatan").phone("088123123122").build());
+		createEmployeeResponseList.add(CreateUserResponse.builder().id(2L).fullname("Bond").age(26).address("Lebak Bulus").phone("088123123122").build());
+		if (request_e.getFullname() != null && request_e.getAge() != null && request_e.getPhone() != null){
+			createEmployeeResponseList.add(
+					CreateUserResponse.builder().id((long)createEmployeeResponseList.size()+1).fullname(request_e.getFullname()).age(request_e.getAge()).address(request_e.getAddress()).phone(request_e.getPhone()).build()
+			);
+		}
+		// return Response
+		return new ResponseEntity<>(createEmployeeResponseList, HttpStatus.OK);
+	}
+	}
+
