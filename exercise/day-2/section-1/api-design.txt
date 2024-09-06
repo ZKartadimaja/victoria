@@ -1,5 +1,5 @@
 - Create Asset
-URI: /asset
+URI: /assets
 Method: POST
 request:
 {
@@ -13,7 +13,7 @@ response:
 }
 
 - Read Asset (get asset by id)
-URI: /asset/1
+URI: /assets/1
 Method: GET
 response:
 {
@@ -24,7 +24,7 @@ response:
 }
 
 - Update Asset
-URI: /asset/1
+URI: /assets/1
 Method: PUT
 request:
 {
@@ -39,7 +39,7 @@ response:
 }
 
 - Delete Asset
-URI: /asset/1
+URI: /assets/1
 Method: DELETE
 request:
 {
