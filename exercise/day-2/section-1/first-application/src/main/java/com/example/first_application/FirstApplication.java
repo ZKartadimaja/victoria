@@ -81,6 +81,13 @@ public class FirstApplication {
 		return list;
 	}
 
+	@GetMapping("/calculator/add")
+	public String getAdd(
+			@RequestParam(name = "panjang") int panjang,
+			@RequestParam(name = "lebar", required = false, defaultValue = "0") int lebar
+	){
+		return String.valueOf(panjang+lebar);
+	}
 	}
 
 //	@GetMapping("/assets/{id}")
