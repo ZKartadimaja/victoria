@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.example</groupId>
-	<artifactId>first-application</artifactId>
+	<artifactId>my-everything</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>first-application</name>
+	<name>my-everything</name>
 	<description>Demo project for Spring Boot</description>
 	<url/>
 	<licenses>
@@ -45,13 +45,7 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-        <dependency>
-            <groupId>org.jetbrains</groupId>
-            <artifactId>annotations</artifactId>
-            <version>RELEASE</version>
-            <scope>compile</scope>
-        </dependency>
-    </dependencies>
+	</dependencies>
 
 	<build>
 		<plugins>

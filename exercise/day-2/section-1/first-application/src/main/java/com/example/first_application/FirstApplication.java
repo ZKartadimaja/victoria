@@ -1,6 +1,7 @@
 package com.example.first_application;
 
 import com.example.first_application.request.CreateUserRequest;
+import com.example.first_application.request.UpdateUserRequest;
 import com.example.first_application.response.CreateUserResponse;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -10,10 +11,12 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 @RestController
 @SpringBootApplication
 public class FirstApplication {
+	private final List<CreateUserResponse> users = new ArrayList<>();
 
 	public static void main(String[] args) {
 		SpringApplication.run(FirstApplication.class, args);
@@ -136,20 +139,52 @@ public class FirstApplication {
 //		return new ResponseEntity<>(createUserRequestList, HttpStatus.OK);
 //		}
 
-	@PostMapping("/employee")
-	public ResponseEntity<List<CreateUserResponse>> createEmployee(
-		@RequestBody CreateUserRequest request_e) {
-		List<CreateUserResponse> createEmployeeResponseList = new ArrayList<>();
+//	@PostMapping("/employee")
+//	public ResponseEntity<List<CreateUserResponse>> createEmployee(
+//		@RequestBody CreateUserRequest request_e) {
+//		List<CreateUserResponse> createEmployeeResponseList = new ArrayList<>();
+//
+//		createEmployeeResponseList.add(CreateUserResponse.builder().id(1L).fullname("James").age(24).address("Tangerang Selatan").phone("088123123122").build());
+//		createEmployeeResponseList.add(CreateUserResponse.builder().id(2L).fullname("Bond").age(26).address("Lebak Bulus").phone("088123123122").build());
+//		if (request_e.getFullname() != null && request_e.getAge() != null && request_e.getPhone() != null){
+//			createEmployeeResponseList.add(
+//					CreateUserResponse.builder().id((long)createEmployeeResponseList.size()+1).fullname(request_e.getFullname()).age(request_e.getAge()).address(request_e.getAddress()).phone(request_e.getPhone()).build()
+//			);
+//		}
+//		else {
+//			System.out.println("Input tidak lengkap");
+//		}
+//		// return Response
+//		return new ResponseEntity<>(createEmployeeResponseList, HttpStatus.OK);
+//	}
 
-		createEmployeeResponseList.add(CreateUserResponse.builder().id(1L).fullname("James").age(24).address("Tangerang Selatan").phone("088123123122").build());
-		createEmployeeResponseList.add(CreateUserResponse.builder().id(2L).fullname("Bond").age(26).address("Lebak Bulus").phone("088123123122").build());
-		if (request_e.getFullname() != null && request_e.getAge() != null && request_e.getPhone() != null){
-			createEmployeeResponseList.add(
-					CreateUserResponse.builder().id((long)createEmployeeResponseList.size()+1).fullname(request_e.getFullname()).age(request_e.getAge()).address(request_e.getAddress()).phone(request_e.getPhone()).build()
-			);
+	//Input
+	@PostMapping("/users")
+	public ResponseEntity<List<CreateUserResponse>> createUser(
+			@RequestBody CreateUserRequest request) {
+		users.add(
+				CreateUserResponse.builder().id((long) users.size()+1).fullname(request.getFullname()).build()
+		);
+
+		// return response
+		return new ResponseEntity<>(users, HttpStatus.OK);
+	}
+
+	// Update
+	@PatchMapping("/users/{id}")
+	public ResponseEntity<List<CreateUserResponse>> updateUser(
+			@RequestBody UpdateUserRequest request,
+			@PathVariable("id") Long id){
+
+		// Check
+		for (CreateUserResponse user : users) {
+			if (Objects.equals(user.getId(), id)) {
+				user.setFullname(request.getFullname());
+			}
 		}
-		// return Response
-		return new ResponseEntity<>(createEmployeeResponseList, HttpStatus.OK);
+
+		// return response
+		return new ResponseEntity<>(users, HttpStatus.OK);
 	}
 	}
 

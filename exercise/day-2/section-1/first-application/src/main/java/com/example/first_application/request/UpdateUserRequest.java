@@ -1,17 +1,15 @@
-package com.example.first_application.response;
+package com.example.first_application.request;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Builder;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@Builder
 @Setter
 @Getter
-public class CreateUserResponse {
-
-    @JsonProperty("id")
-    private Long id;
+@NoArgsConstructor
+public class UpdateUserRequest {
 
     @JsonProperty("full_name")
     private String fullname;
@@ -24,11 +22,4 @@ public class CreateUserResponse {
 //
 //    @JsonProperty("phone")
 //    private String phone;
-
-//    @JsonProperty("type")
-//    private String type;
-//
-//    @JsonProperty("amount")
-//    private int amount;
 }
-
