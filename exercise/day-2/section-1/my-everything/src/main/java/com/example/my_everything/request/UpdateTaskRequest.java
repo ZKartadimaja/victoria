@@ -1,16 +1,15 @@
-package com.example.my_everything.response;
+package com.example.my_everything.request;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import lombok.Builder;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Setter
 @Getter
-@Builder
-public class GetUserResponse {
-    @JsonProperty("id")
-    private Long id;
+@NoArgsConstructor
+
+public class UpdateTaskRequest {
 
     @JsonProperty("name")
     private String name;

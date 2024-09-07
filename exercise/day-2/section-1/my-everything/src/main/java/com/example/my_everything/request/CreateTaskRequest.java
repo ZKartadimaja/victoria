@@ -3,14 +3,12 @@ package com.example.my_everything.request;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Builder;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+@Builder
 @Setter
 @Getter
-@NoArgsConstructor
-
-public class UpdateUserRequest {
+public class CreateTaskRequest {
 
     @JsonProperty("name")
     private String name;
@@ -20,4 +18,5 @@ public class UpdateUserRequest {
 
     @JsonProperty("description")
     private String description;
+
 }

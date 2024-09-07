@@ -1,4 +1,4 @@
-package com.example.my_everything.request;
+package com.example.my_everything.response;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Builder;
@@ -8,7 +8,9 @@ import lombok.Setter;
 @Setter
 @Getter
 @Builder
-public class DeleteUserRequest {
+public class GetTaskResponse {
+    @JsonProperty("id")
+    private Long id;
 
     @JsonProperty("name")
     private String name;
@@ -18,5 +20,4 @@ public class DeleteUserRequest {
 
     @JsonProperty("description")
     private String description;
-
 }

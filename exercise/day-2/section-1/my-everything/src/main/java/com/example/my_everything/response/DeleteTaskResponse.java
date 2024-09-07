@@ -3,13 +3,13 @@ package com.example.my_everything.response;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Builder;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@Builder
 @Setter
 @Getter
-public class CreateUserResponse {
-
+@NoArgsConstructor
+public class DeleteTaskResponse {
     @JsonProperty("id")
     private Long id;
 

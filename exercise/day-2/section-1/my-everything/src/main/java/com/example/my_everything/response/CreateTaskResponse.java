@@ -5,10 +5,11 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 
+@Builder
 @Setter
 @Getter
-@Builder
-public class DeleteUserResponse {
+public class CreateTaskResponse {
+
     @JsonProperty("id")
     private Long id;
 
