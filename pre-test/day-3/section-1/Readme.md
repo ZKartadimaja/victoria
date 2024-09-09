@@ -208,7 +208,7 @@ You are asked to provide insights from the library’s database. Solve the follo
 
 2. **Display a list of borrowers who have borrowed more than 5 books in total. Include their name and the count of books borrowed.**
    - **Hint**: Use a `GROUP BY` clause on the `borrowers` table, along with a `HAVING` clause to filter those who borrowed more than 5 books.
-
+   
 3. **For each book, display the title and the number of times it has been borrowed, sorted in descending order by the number of times borrowed.**
    - **Hint**: You’ll need to join the `borrowed_books` and `books` tables and use an aggregate function to count how many times each book has been borrowed.
 
