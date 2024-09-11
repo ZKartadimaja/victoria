@@ -1,0 +1,27 @@
+1. B
+2. A
+3. A
+4. A
+5. D
+6. False
+7. True
+8. True
+9. False
+10. True
+
+//Short Answer
+11. Untuk menghandle HTTP request dan response dan menggunakan Service untuk menghandle request tersebut
+12. Dengan mengimplementasikan Service (Service Implements)
+13. Controller untuk menghandle HTTP request dan response selanjutnya akan dikirim ke "Service" dimana service yang akan mengeksekusi, lalu apabila membutuhkan hubungan dengan database "Repository" akan menjembatani dimana dalam Repo biasanya berisi membuat dan mengelola perubahan pada kode sumber aplikasi .
+14. Kelas yang berinteraksi dengan database biasanya berisi terkait untuk perubahan atau pengambilan dari database
+15. Implicit, terjadi secara otomatis. Sedangkan, eksplisit perlu tidak dimana perlu di state terlbih dahulu
+16. Melakukan set up Mengunakan OAuth2 untuk mengeluarkan JWT Token. Mengamankan API endpoint  dengan memvalidasi   API Endpoint
+17. double num = Double.parseDouble("23.56");
+18. Melakukan verifikasi terhadap aktual output dari test dengan hasil output yang di ekspektasikan.
+19.
+20. @Service, Class di buat pada subpackage dari main application package
+21. Untuk mengimplementasikan Bussiness Logic dan berintegrasi dengan data access layer
+22.
+23. Meneruskan HTTP Request ke pengelola metode
+24. Menggunakan @SpringBootTest, terdapat dua metode yaitu parameterized test dimana menjalan test yang sama tetapi dengan input yang berbeda. Yang kedua ada Dynamic Test = dinama membuat sebuah pengujian ketika sedan menjalankan aplikasi
+25.
